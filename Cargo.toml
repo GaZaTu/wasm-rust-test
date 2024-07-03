@@ -1,3 +1,4 @@
+
 [package]
 name = "wasm-rust-test"
 version = "0.1.0"
@@ -7,11 +8,14 @@ edition = "2021"
 crate-type = ["cdylib"]
 
 [dependencies]
-lib_wasm = { path = "./lib_wasm" }
-lib_wasm_proc = { path = "./lib_wasm_proc" }
+lib_wasm.workspace = true
+lib_wasm_proc.workspace = true
 
 [workspace]
-members = [
-  "lib_wasm",
-  "lib_wasm_proc",
-]
+resolver = "2"
+members = ["lib_wasm", "lib_wasm_proc"]
+
+[workspace.dependencies]
+lib_wasm = { path = "lib_wasm"  }
+lib_wasm_proc = { path = "lib_wasm_proc" }
+

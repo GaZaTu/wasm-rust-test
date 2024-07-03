@@ -1,4 +1,7 @@
-use std::{alloc::{alloc, dealloc, Layout}, ptr::copy_nonoverlapping};
+use std::{
+  alloc::{alloc, dealloc, Layout},
+  ptr::copy_nonoverlapping,
+};
 
 pub struct WasmBuffer {
   pub ptr: *mut u8,

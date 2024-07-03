@@ -1,10 +1,13 @@
 #![allow(dead_code)]
 
-use std::{alloc::{alloc, dealloc, GlobalAlloc, Layout}, ptr::copy_nonoverlapping};
+use std::{
+  alloc::{alloc, dealloc, GlobalAlloc, Layout},
+  ptr::copy_nonoverlapping,
+};
 
-use lib_wasm::{_println, define_wasm_import, WasmBuffer};
+use lib_wasm::{_println, buffer::WasmBuffer, define_wasm_import};
 
-extern {
+extern "C" {
   fn wasm_printnr(number: i64);
   fn wasm_println(slice: u64);
 

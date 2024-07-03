@@ -1,6 +1,6 @@
 use std::alloc::{GlobalAlloc, Layout};
 
-extern {
+extern "C" {
   fn wasm_alloc(size: u64) -> u64;
   fn wasm_dealloc(ptr: u64);
 }

@@ -1,6 +1,6 @@
 #![allow(dead_code)]
 
-extern {
+extern "C" {
   fn wasm_println(string: u64);
 }
 
