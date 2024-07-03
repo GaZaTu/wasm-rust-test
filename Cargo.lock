@@ -10,7 +10,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "lib_wasm_proc"
+name = "lib_wasm_derive"
 version = "0.1.0"
 dependencies = [
  "quote",
@@ -63,5 +63,5 @@ name = "wasm-rust-test"
 version = "0.1.0"
 dependencies = [
  "lib_wasm",
- "lib_wasm_proc",
+ "lib_wasm_derive",
 ]

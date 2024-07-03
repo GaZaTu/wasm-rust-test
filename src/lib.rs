@@ -5,7 +5,8 @@ use std::{
   ptr::copy_nonoverlapping,
 };
 
-use lib_wasm::{_println, buffer::WasmBuffer, define_wasm_import};
+use lib_wasm::{_println, buffer::WasmBuffer, define_wasm_import, wasm_into::WasmIntoAbi};
+use lib_wasm_derive::wasm_donkgen;
 
 extern "C" {
   fn wasm_printnr(number: i64);
@@ -49,6 +50,11 @@ impl Drop for XTest {
 }
 
 define_wasm_import!(get_string, () -> String);
+
+#[wasm_donkgen]
+fn return_string(lul: f64, lul2: u64) -> String {
+  return "Hello".to_string();
+}
 
 #[no_mangle]
 pub unsafe extern "C" fn main() -> u64 {
